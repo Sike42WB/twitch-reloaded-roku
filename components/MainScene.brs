@@ -2,6 +2,35 @@
 'usher.ttvnw.net/api/channel/hls/${user}.m3u8?allow_source=true&allow_spectre=true&type=any&token=${token}&sig=${sig}
 
 function init()
+'' Put documentation sample code for Sentry.io error tracking.
+''  
+''  import ("github.com/getsentry/sentry-go")
+''  Go Lang example above
+''  Question how we can where in the app to kick off Sentry-go
+''  import("log", "time", "github.com/getsentry/sentry-go")
+''
+''   err := sentry.Init(sentry.ClientOptions{
+''		Dsn: "https://examplePublicKey@o0.ingest.sentry.io/0",
+''		Environment:"",
+''		Release: "Twoku@0.8.00001",
+''		Debug: true,
+''		TracesSampleRate: 1.0,
+''	})
+''	if err != nil {
+''		log.Fatalf("sentry.Init: %s", err)
+''	}
+''	
+''  defer sentry.Flush(2 * time.Second)
+''
+''
+''
+''
+'' Put unit test on avg return result load time.
+''
+''  Ask testing team  
+''
+
+
     environment_variables = ReadAsciiFile("pkg:/env").Split(Chr(10))
     for each var in environment_variables
         var_info = var.Split("=")
